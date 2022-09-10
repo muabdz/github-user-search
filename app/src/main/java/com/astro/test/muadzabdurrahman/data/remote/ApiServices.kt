@@ -1,12 +1,17 @@
 package com.astro.test.muadzabdurrahman.data.remote
 
+import com.astro.test.muadzabdurrahman.data.remote.response.SearchUserResponse
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
+import io.reactivex.Observable
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
+import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
 interface ApiServices {
@@ -40,4 +45,8 @@ interface ApiServices {
 
         }
     }
+
+    @GET("search/users")
+    fun searchUsers(@Query("q") keyword : String, @Query("page") page : Int, @Query("per_page") numberOfItems : Int = 30) : Observable<Response<SearchUserResponse>>
+
 }

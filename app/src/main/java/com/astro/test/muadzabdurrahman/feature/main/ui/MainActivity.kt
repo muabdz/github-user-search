@@ -1,7 +1,8 @@
-package com.astro.test.muadzabdurrahman
+package com.astro.test.muadzabdurrahman.feature.main.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.astro.test.muadzabdurrahman.R
 import com.astro.test.muadzabdurrahman.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

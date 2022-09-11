@@ -19,6 +19,7 @@ class SearchRepositoryImpl(private val dataSource: SearchDataSource) : SearchRep
         val disposable = dataSource.searchUser(keyword, page).fetchStateEventSubscriber {
             _searchStateEventManager.post(it)
         }
+        disposables.add(disposable)
     }
 
     override fun close() {
